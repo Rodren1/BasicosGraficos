@@ -756,19 +756,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int vel = Integer.parseInt(jTextField2.getText());
-        if (jCheckBox2.isSelected()) {
-            vel -= 5;
-        }
-        if (vel <= 60) {
-            jLabel1.setText("No hay multa");
-        }
-        if (vel > 60 && vel <= 80) {
-            jLabel1.setText("Multa pequeña");
-        }
-        if (vel > 80) {
-            jLabel1.setText("Multa grande");
-        }
+        int velocidad = Integer.parseInt(jTextField2.getText());
+        String multa = String.valueOf(multa(velocidad, jCheckBox2.isSelected()));
+        jLabel1.setText(multa);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
